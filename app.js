@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const {router} = require('./routes/index');
+const {indexRouter} = require('./routes/index');
 const {toDoRouter} = require('./routes/todo');
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
-app.use('/', router);
+app.use('/', indexRouter);
 app.use('/', toDoRouter);
 
 
